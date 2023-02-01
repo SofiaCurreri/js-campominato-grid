@@ -53,6 +53,7 @@ function createGrid(gridEl, dim) {
             "click",
             function () {
                 this.classList.toggle("active");
+                console.log("Il numero corrispondente alla cella è ", i + 1);
             }
         )
     }
