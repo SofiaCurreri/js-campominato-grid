@@ -22,3 +22,8 @@ body {
 .square {
     border: 3px solid white;
 }
+
+.square.active {
+    background-color: rgb(47, 140, 233);
+    color: black !important;
+}

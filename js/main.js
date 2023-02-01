@@ -48,5 +48,12 @@ function createGrid(gridEl, dim) {
         const squareNum = i + 1;
         square.append(squareNum);
 
+        //per far cambiare colore alla cella se cliccata
+        square.addEventListener(
+            "click",
+            function () {
+                this.classList.toggle("active");
+            }
+        )
     }
 }
