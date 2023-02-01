@@ -2,6 +2,10 @@ body {
     background-color: rgb(102, 171, 102);
 }
 
+h1 {
+    font-size: 3rem;
+}
+
 #grid {
     width: 1000px;
     height: 1000px;
