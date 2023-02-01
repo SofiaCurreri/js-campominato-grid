@@ -39,8 +39,14 @@ playButton.addEventListener(
 function createGrid(gridEl, dim) {
     gridEl.innerHTML = "";
     for (let i = 0; i < dim; i++) {
+        //per creare e aggiungere le celle
         const square = document.createElement("div");
-        square.classList.add("square");
+        square.classList.add("square", "text-white", "fw-bold");
         gridEl.append(square);
+
+        //per aggiungere i numeri alle celle
+        const squareNum = i + 1;
+        square.append(squareNum);
+
     }
 }
