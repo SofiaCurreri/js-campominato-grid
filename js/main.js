@@ -32,20 +32,14 @@ playButton.addEventListener(
         const chooseLevel = playLevel.value;
         let dimension;
 
-
         if (chooseLevel == "l-1") {
             dimension = 100;
-            createGrid(gridEl, dimension);
-            square.classList.add("diff-1");
         } else if (chooseLevel == "l-2") {
             dimension = 81;
-            createGrid(gridEl, dimension);
-            square.classList.add("diff-2");
         } else {
             dimension = 49;
-            createGrid(gridEl, dimension);
-            square.classList.add("diff-3");
         }
+        createGrid(gridEl, dimension, chooseLevel);
     }
 );
 
@@ -56,24 +50,36 @@ playButton.addEventListener(
 *                                 FUNCTIONS                               *
 *                                                                         *
 ***************************************************************************/
-function createGrid(gridEl, dim) {
+function createGrid(gridEl, dim, chooseLevel) {
     gridEl.innerHTML = "";
+
     for (let i = 0; i < dim; i++) {
         //per creare e aggiungere le celle
         const square = document.createElement("div");
         square.classList.add("square", "text-white", "fw-bold");
+
+        //per determinare dimensione celle in base al livello scelto
+        if (chooseLevel == "l-1") {
+            square.classList.add("diff-1");
+        } else if (chooseLevel == "l-2") {
+            square.classList.add("diff-2");
+        } else {
+            square.classList.add("diff-3");
+        }
+
+        //per aggiungere alla griglia la cella appena creata
         gridEl.append(square);
 
         //per aggiungere i numeri alle celle
         const squareNum = i + 1;
-        square.append(squareNum);
+        square.innerHTML = squareNum;
 
         //per far cambiare colore alla cella se cliccata
         square.addEventListener(
             "click",
             function () {
                 this.classList.toggle("active");
-                console.log("Il numero corrispondente alla cella è ", i + 1);
+                console.log("Il numero corrispondente alla cella è ", this.innerHTML);
             }
         )
     }
