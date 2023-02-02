@@ -14,12 +14,25 @@ h1 {
 }
 
 .square {
-    height: calc(100% / 10);
-    width: calc(100% / 10);
     cursor: crosshair;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.diff-1 {
+    height: calc(100% / 10);
+    width: calc(100% / 10);
+}
+
+.diff-2 {
+    height: calc(100% / 9);
+    width: calc(100% / 9);
+}
+
+.diff-3 {
+    height: calc(100% / 7);
+    width: calc(100% / 7);
 }
 
 #grid,

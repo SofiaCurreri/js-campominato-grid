@@ -32,14 +32,20 @@ playButton.addEventListener(
         const chooseLevel = playLevel.value;
         let dimension;
 
+
         if (chooseLevel == "l-1") {
             dimension = 100;
+            createGrid(gridEl, dimension);
+            square.classList.add("diff-1");
         } else if (chooseLevel == "l-2") {
             dimension = 81;
+            createGrid(gridEl, dimension);
+            square.classList.add("diff-2");
         } else {
             dimension = 49;
+            createGrid(gridEl, dimension);
+            square.classList.add("diff-3");
         }
-        createGrid(gridEl, dimension);
     }
 );
 
